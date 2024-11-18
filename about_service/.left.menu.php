@@ -2,21 +2,21 @@
 $aMenuLinks = Array(
 	Array(
 		"Вакансии", 
-		"/about_service/vacancy/index.php", 
+		"/about_service/vacancy/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Контакты", 
-		"/about_service/contacts/index.php", 
+		"/about_service/contacts/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Новости", 
-		"/about_service/news/index.php", 
+		"/about_service/news/", 
 		Array(), 
 		Array(), 
 		"" 
