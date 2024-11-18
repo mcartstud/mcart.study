@@ -1,6 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Мебельная компания");
+$APPLICATION->SetPageProperty("title", "Главная");
+$APPLICATION->SetPageProperty("keywords", "Недвижимость, продавать, покупать");
+$APPLICATION->SetPageProperty("description", "Это биржа недвижемости");
+$APPLICATION->SetTitle("Биржа недвижемости");
 ?><p>
 Наша компания существует на Российском рынке с 1992 года. За это время «Мебельная компания» прошла большой путь от маленькой торговой фирмы до одного из крупнейших производителей корпусной мебели в России.
 </p><p>
