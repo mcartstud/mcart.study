@@ -1,8 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("keywords", "Недвижимость, продавать, покупать");
-$APPLICATION->SetPageProperty("description", "Здесь хранятся новости сайта");
-$APPLICATION->SetTitle("Новости");
+$APPLICATION->SetTitle("Мои объявления");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news",
 	"",
@@ -27,18 +25,18 @@ $APPLICATION->SetTitle("Новости");
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => array("",""),
+		"DETAIL_PROPERTY_CODE" => array("PRICE","PRIOR","GARAGE","AREA","TOILETS","AMMOUNT_FLOOR","LINKS",""),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_NAME" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "1",
-		"IBLOCK_TYPE" => "news",
+		"IBLOCK_ID" => "6",
+		"IBLOCK_TYPE" => "sale_ad",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"LIST_ACTIVE_DATE_FORMAT" => "j M Y",
-		"LIST_FIELD_CODE" => array("NAME","PREVIEW_TEXT","PREVIEW_PICTURE",""),
-		"LIST_PROPERTY_CODE" => array("",""),
+		"LIST_FIELD_CODE" => array("NAME","PREVIEW_TEXT","PREVIEW_PICTURE","DATE_CREATE",""),
+		"LIST_PROPERTY_CODE" => array("PRICE","AREA",""),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -51,7 +49,7 @@ $APPLICATION->SetTitle("Новости");
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Новости",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"SEF_FOLDER" => "/about_service/news/",
+		"SEF_FOLDER" => "/saler_account/my_adverts/",
 		"SEF_MODE" => "Y",
 		"SEF_URL_TEMPLATES" => Array("detail"=>"#ELEMENT_CODE#/","news"=>"","section"=>""),
 		"SET_LAST_MODIFIED" => "N",
