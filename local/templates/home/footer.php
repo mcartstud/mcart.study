@@ -4,10 +4,18 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="mb-5">
-            <h3 class="footer-heading mb-4">About HomeSpace</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque,
-              consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima
-              minus odio!</p>
+            <h3 class="footer-heading mb-4"><?=GetMessage('ABOUT')?></h3>
+            <?$APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    ".default",
+                    Array(
+                      "AREA_FILE_SHOW" => "file",
+                      "AREA_FILE_SUFFIX" => "inc",
+                      "COMPONENT_TEMPLATE" => ".default",
+                      "EDIT_TEMPLATE" => "",
+                      "PATH" => "/local/include/about.php"
+                    )
+                  );?>
           </div>
 
 
@@ -16,9 +24,31 @@
         <div class="col-lg-4 mb-5 mb-lg-0">
           <div class="row mb-5">
             <div class="col-md-12">
-              <h3 class="footer-heading mb-4">Navigations</h3>
+              <h3 class="footer-heading mb-4"><?=GetMessage('NAV')?></h3>
             </div>
             <div class="col-md-6 col-lg-6">
+              <?$APPLICATION->IncludeComponent(
+                "bitrix:menu", 
+                "horizontal_multilevel", 
+                array(
+                  "ROOT_MENU_TYPE" => "top",
+                  "MAX_LEVEL" => "3",
+                  "CHILD_MENU_TYPE" => "left",
+                  "USE_EXT" => "Y",
+                  "MENU_CACHE_TYPE" => "A",
+                  "MENU_CACHE_TIME" => "36000000",
+                  "MENU_CACHE_USE_GROUPS" => "Y",
+                  "MENU_CACHE_GET_VARS" => array(
+                  ),
+                  "COMPONENT_TEMPLATE" => "horizontal_multilevel",
+                  "DELAY" => "N",
+                  "ALLOW_MULTI_SELECT" => "N"
+                ),
+                false,
+                array(
+                  "ACTIVE_COMPONENT" => "Y"
+                )
+              );?>
               <ul class="list-unstyled">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Buy</a></li>
@@ -40,13 +70,20 @@
         </div>
 
         <div class="col-lg-4 mb-5 mb-lg-0">
-          <h3 class="footer-heading mb-4">Follow Us</h3>
+          <h3 class="footer-heading mb-4"><?=GetMessage('LINKS')?></h3>
 
           <div>
-            <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+            <?$APPLICATION->IncludeComponent(
+              "bitrix:main.include",
+              ".default",
+              Array(
+                "AREA_FILE_SHOW" => "file",
+                "AREA_FILE_SUFFIX" => "inc",
+                "COMPONENT_TEMPLATE" => ".default",
+                "EDIT_TEMPLATE" => "",
+                "PATH" => "/local/include/links_bottom.php"
+              )
+            );?>
           </div>
 
 
@@ -56,14 +93,17 @@
       </div>
       <div class="row pt-5 mt-5 text-center">
         <div class="col-md-12">
-          <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;</script>
-            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
-            <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
-              target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </p>
+        <?$APPLICATION->IncludeComponent(
+              "bitrix:main.include",
+              ".default",
+              Array(
+                "AREA_FILE_SHOW" => "file",
+                "AREA_FILE_SUFFIX" => "inc",
+                "COMPONENT_TEMPLATE" => ".default",
+                "EDIT_TEMPLATE" => "",
+                "PATH" => "/local/include/copyright.php"
+              )
+            );?>
         </div>
 
       </div>
