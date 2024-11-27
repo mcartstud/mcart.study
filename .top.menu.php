@@ -4,7 +4,7 @@ $aMenuLinks = Array(
 		"Главная", 
 		"/", 
 		Array(), 
-		Array(), 
+		Array("SELECTED"=>"Y"), 
 		"" 
 	),
 	Array(

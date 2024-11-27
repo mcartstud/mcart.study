@@ -419,7 +419,7 @@ body {
     padding-right: 0;
   }
   .site-navbar .site-navigation .site-menu > li:last-child > a {
-    padding-right: 0;
+    /* padding-right: 0; */
   }
   .site-navbar .site-navigation .site-menu .has-children {
     position: relative;
