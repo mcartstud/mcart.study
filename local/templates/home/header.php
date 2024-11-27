@@ -140,3 +140,17 @@ IncludeTemplateLangFile(__FILE__);
       </div>
     </div>
   </div>
+
+  <?
+  if (!($APPLICATION->GetCurDir() == "/")) {
+  $APPLICATION->IncludeComponent(
+	"bitrix:breadcrumb", 
+	"inner_chain", 
+	array(
+		"COMPONENT_TEMPLATE" => "inner_chain",
+		"PATH" => "",
+		"SITE_ID" => "s1",
+		"START_FROM" => "0"
+	),
+	false
+);}?>
