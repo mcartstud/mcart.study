@@ -146,17 +146,18 @@ $APPLICATION->SetTitle("Биржа недвижемости");
 			0 => "NAME",
 			1 => "PREVIEW_TEXT",
 			2 => "PREVIEW_PICTURE",
-			3 => "PROPERTY_13",
-			4 => "PROPERTY_18",
-			5 => "PROPERTY_16",
-			6 => "PROPERTY_17",
-			7 => "PROPERTY_15",
+			3 => "PROPERTY_PRICE",
+			4 => "PROPERTY_GARAGE",
+			5 => "PROPERTY_AREA",
+			6 => "PROPERTY_TOILETS",
+			7 => "PROPERTY_AMMOUNT_FLOOR",
+			8 => "",
 		),
 		"IBLOCKS" => array(
 			0 => "6",
 		),
 		"IBLOCK_TYPE" => "sale_ad",
-		"NEWS_COUNT" => "9",
+		"NEWS_COUNT" => "6",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
@@ -164,27 +165,32 @@ $APPLICATION->SetTitle("Биржа недвижемости");
 	),
 	false
 );?>
- <?$APPLICATION->IncludeComponent("bitrix:news.line", "links_services", Array(
-	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
-		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
-		"CACHE_TIME" => "7889238",	// Время кеширования (сек.)
-		"CACHE_TYPE" => "A",	// Тип кеширования
-		"DETAIL_URL" => "",	// URL, ведущий на страницу с содержимым элемента раздела
-		"FIELD_CODE" => array(	// Поля
+ <?$APPLICATION->IncludeComponent(
+	"bitrix:news.line", 
+	"links_services", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "7889238",
+		"CACHE_TYPE" => "A",
+		"DETAIL_URL" => "",
+		"FIELD_CODE" => array(
 			0 => "NAME",
 			1 => "PREVIEW_PICTURE",
-			2 => "",
+			2 => "PROPERTY_LINK",
+			3 => "PROPERTY_ICON",
+			4 => "",
 		),
-		"IBLOCKS" => array(	// Код информационного блока
+		"IBLOCKS" => array(
 			0 => "7",
 		),
-		"IBLOCK_TYPE" => "services",	// Тип информационного блока
-		"NEWS_COUNT" => "6",	// Количество новостей на странице
-		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
-		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
-		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
-		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
-		"COMPONENT_TEMPLATE" => ".default"
+		"IBLOCK_TYPE" => "services",
+		"NEWS_COUNT" => "6",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"COMPONENT_TEMPLATE" => "links_services"
 	),
 	false
 );?><?$APPLICATION->IncludeComponent(
