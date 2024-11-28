@@ -43,7 +43,7 @@ $APPLICATION->SetTitle("Вакансии");
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "4",
 		"IBLOCK_TYPE" => "vacancies",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "j M Y",
 		"LIST_FIELD_CODE" => array(
 			0 => "NAME",
@@ -86,6 +86,10 @@ $APPLICATION->SetTitle("Вакансии");
 		"USE_SEARCH" => "N",
 		"COMPONENT_TEMPLATE" => ".default",
 		"SEF_FOLDER" => "/about_service/vacancy/",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"USE_SHARE" => "N",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
