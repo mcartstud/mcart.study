@@ -12,14 +12,12 @@ if(empty($arResult))
 	return "";
 
 $strReturn = '';
-$strReturn .="<script>".print_r($arResult)."</script>";
-$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
 $strReturn .= '
 	<div class="bx-breadcrumb site-blocks-cover inner-page-cover overlay" style="background-image: url('.SITE_TEMPLATE_PATH.'/images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5" itemscope itemtype="http://schema.org/BreadcrumbList">
 		<div class="container">
 			<div class="row align-items-center justify-content-center text-center">
 				<div class="col-md-10">
-					<h1 class="mb-2">'.$arResult[count($arResult) - 1]['TITLE'].'</h1>
+					<h1 class="mb-2">'.CMain::GetTitle().'</h1>
 ';
 
 $itemSize = count($arResult);
