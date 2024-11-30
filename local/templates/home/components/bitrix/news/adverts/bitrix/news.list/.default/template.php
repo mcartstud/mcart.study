@@ -21,7 +21,7 @@ $this->setFrameMode(true);
 		<div class="select-wrap">
 			<span class="icon icon-arrow_drop_down"></span>
 			<select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-			<option value="">Lot Area</option>
+			<option value=""><?=GetMessage("AREAFILTER")?></option>
 			<option value="1000">1000</option>
 			<option value="800">800</option>
 			<option value="600">600</option>
@@ -35,7 +35,7 @@ $this->setFrameMode(true);
 		<div class="select-wrap">
 			<span class="icon icon-arrow_drop_down"></span>
 			<select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-			<option value="">Property Status</option>
+			<option value=""><?=GetMessage("STATUSFILTER")?></option>
 			<option value="For Sale">For Sale</option>
 			<option value="For Rent">For Rent</option>
 			</select>
@@ -45,7 +45,7 @@ $this->setFrameMode(true);
 		<div class="select-wrap">
 			<span class="icon icon-arrow_drop_down"></span>
 			<select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-			<option value="">Location</option>
+			<option value=""><?=GetMessage("CITYFILTER")?></option>
 			<option value="United States">United States</option>
 			<option value="United Kingdom">United Kingdom</option>
 			<option value="Canada">Canada</option>
@@ -57,13 +57,9 @@ $this->setFrameMode(true);
 		<div class="select-wrap">
 			<span class="icon icon-arrow_drop_down"></span>
 			<select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-			<option value="">Lot Area</option>
-			<option value="1000">1000</option>
-			<option value="800">800</option>
-			<option value="600">600</option>
-			<option value="400">400</option>
-			<option value="200">200</option>
-			<option value="100">100</option>
+			<option value=""><?=GetMessage("GARAGEFILTER")?></option>
+			<option value="yes"><?=GetMessage("GARAGEFILTER_Y")?></option>
+			<option value="no"><?=GetMessage("GARAGEFILTER_N")?></option>
 			</select>
 		</div>
 		</div>
@@ -71,7 +67,7 @@ $this->setFrameMode(true);
 		<div class="select-wrap">
 			<span class="icon icon-arrow_drop_down"></span>
 			<select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-			<option value="">Bedrooms</option>
+			<option value=""><?=GetMessage("FLOORFILTER")?></option>
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -84,7 +80,7 @@ $this->setFrameMode(true);
 		<div class="select-wrap">
 			<span class="icon icon-arrow_drop_down"></span>
 			<select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-			<option value="">Bathrooms</option>
+			<option value=""><?=GetMessage("TOILETSFILTER")?></option>
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -100,7 +96,7 @@ $this->setFrameMode(true);
 		</div>
 		</div>
 		<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-		<input type="submit" class="btn btn-primary btn-block form-control-same-height rounded-0" value="Search">
+		<input type="submit" class="btn btn-primary btn-block form-control-same-height rounded-0" value="<?=GetMessage("SEARCHFILTER")?>">
 		</div>
 		
 	</form>
@@ -153,7 +149,7 @@ $this->setFrameMode(true);
 			</div>
 		<?endforeach;?>
 	</div>
-	<div class="row">
+	<div class="row mb-5">
 		<div class="col-md-12 text-center">
 			<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
 				<br /><?=$arResult["NAV_STRING"]?>

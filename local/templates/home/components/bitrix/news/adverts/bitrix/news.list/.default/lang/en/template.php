@@ -6,4 +6,13 @@ $MESS['FLOORS'] = 'Floors: ';
 $MESS['TOILETS'] = 'Toilets: ';
 $MESS['GARAGES'] = 'Garages: ';
 $MESS["METERS"] = "m";
+$MESS['AREAFILTER'] = "Area";
+$MESS['STATUSFILTER'] = "Status";
+$MESS['CITYFILTER'] = "Country";
+$MESS['GARAGEFILTER'] = "Garage";
+$MESS['FLOORFILTER'] = "Floors";
+$MESS['TOILETSFILTER'] = "Toilets";
+$MESS['SEARCHFILTER'] = "Search";
+$MESS['GARAGEFILTER_Y'] = "Included";
+$MESS['GARAGEFILTER_N'] = "None";
 ?>

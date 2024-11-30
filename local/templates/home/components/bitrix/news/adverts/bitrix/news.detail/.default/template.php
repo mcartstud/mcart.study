@@ -51,15 +51,20 @@ $this->setFrameMode(true);
 				<div class="mb-5">
 					<div class="slide-one-item home-slider owl-carousel">
 						<?
-						if (is_array($arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"][1])) {
-							foreach($arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"] as $img){?>
-								<div><img src="<?=$img['SRC']?>" alt="Image" class="img-fluid"></div>
-							<?}
-						}else { 
-							?>
-							<div><img src="<?=$arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"]['SRC']?>" alt="Image" class="img-fluid"></div>
-							<?
+						if ($arResult['DISPLAY_PROPERTIES']['GALLARY'] != NULL) {
+							if (count($arResult['DISPLAY_PROPERTIES']['GALLARY']["VALUE"]) > 1) {
+								foreach($arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"] as $img){?>
+									<div><img src="<?=$img['SRC']?>" alt="Image" class="img-fluid"></div>
+								<?}
+							}else { 
+								?>
+								<div><img src="<?=$arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"]['SRC']?>" alt="Image" class="img-fluid"></div>
+								<?
+							}
 						}
+						else { ?>
+							<div><img src="<?=$arResult["DETAIL_PICTURE"]['SRC']?>" alt="Image" class="img-fluid"></div>
+						<?}
 						?>
 					</div>
 					
@@ -73,7 +78,7 @@ $this->setFrameMode(true);
 							<ul class="property-specs-wrap mb-3 mb-lg-0  float-lg-right">
 								<li>
 									<span class="property-specs"><?=GetMessage("UP_DATE")?></span>
-									<span class="property-specs-number"><?=$arResult["IBLOCK"]['TIMESTAMP_X']?></span>
+									<span class="property-specs-number"><?=$arResult['TIMESTAMP_X']?></span>
 									
 								</li>
 								<li>
@@ -102,54 +107,64 @@ $this->setFrameMode(true);
 					<h2 class="h4 text-black"><?=GetMessage("MOREINFO")?></h2>
 					<p><?=$arResult["DETAIL_TEXT"]?></p>
 					<div class="row mt-5">
+						<?
+						if ($arResult['DISPLAY_PROPERTIES']['GALLARY'] != NULL) {
+							?>
 						<div class="col-12">
 							<h2 class="h4 text-black mb-3"><?=GetMessage("GAL")?></h2>
 						</div>
 						<?
-						if (is_array($arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"][1])) {
-							foreach($arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"] as $img){?>
+							if (count($arResult['DISPLAY_PROPERTIES']['GALLARY']['VALUE']) > 1) {
+								foreach($arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"] as $img){?>
+									<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+									<a href="<?=$img['SRC']?>" class="image-popup gal-item"><img src="<?=$img['SRC']?>" alt="Image" class="img-fluid"></a>
+								</div>
+								<?}
+							}else { 
+								?>
 								<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-							<a href="<?=$img['SRC']?>" class="image-popup gal-item"><img src="<?=$img['SRC']?>" alt="Image" class="img-fluid"></a>
-						</div>
-							<?}
-						}else { 
-							?>
-							<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-								<a href="<?=$arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"]['SRC']?>" class="image-popup gal-item"><img src="<?=$arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"]['SRC']?>" alt="Image" class="img-fluid"></a>
-							</div>
-							<?
-						}
+									<a href="<?=$arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"]['SRC']?>" class="image-popup gal-item"><img src="<?=$arResult['DISPLAY_PROPERTIES']['GALLARY']["FILE_VALUE"]['SRC']?>" alt="Image" class="img-fluid"></a>
+								</div>
+								<?
+							}
+						}	
 						?>					
 					</div>
 					<div class="row mt-5">
+						<?
+						if ($arResult['DISPLAY_PROPERTIES']['ADITION_MATERIALS'] != NULL) {
+							?>							
 						<div class="col-12">
 							<h2 class="h4 text-black mb-3"><?=GetMessage("ADIT")?></h2>
-						</div>	
+						</div>							
 						<?
-						if (is_array($arResult['DISPLAY_PROPERTIES']['ADITION_MATERIALS']["FILE_VALUE"][1])) {
-							foreach($arResult['DISPLAY_PROPERTIES']['ADITION_MATERIALS']["FILE_VALUE"] as $img){?>
+							if (count($arResult['DISPLAY_PROPERTIES']['ADITION_MATERIALS']["VALUE"]) > 1) {
+								?><div class="col-sm-6 col-md-4 col-lg-3 mb-4"><?
+								foreach($arResult['DISPLAY_PROPERTIES']['ADITION_MATERIALS']["FILE_VALUE"] as $img){?>
+										<a href="<?=$img['SRC']?>" class="image-popup gal-item"><?=$img['ORIGINAL_NAME']?></a>
+										<?}
+									?></div><?
+							}else { 
+								?>
 								<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-							<a href="<?=$img['SRC']?>" class="image-popup gal-item"><img src="<?=$img['SRC']?>" alt="Image" class="img-fluid"></a>
-						</div>
-							<?}
-						}else { 
-							?>
-							<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-							<a href="<?=$arResult['DISPLAY_PROPERTIES']['ADITION_MATERIALS']["FILE_VALUE"]['SRC']?>" class="image-popup gal-item"><img src="<?=$arResult['DISPLAY_PROPERTIES']['ADITION_MATERIALS']["FILE_VALUE"]['SRC']?>" alt="Image" class="img-fluid"></a>
-						</div>
-							<?
+									<a href="<?=$arResult['DISPLAY_PROPERTIES']['ADITION_MATERIALS']["FILE_VALUE"]['SRC']?>" class="image-popup gal-item"><img src="<?=$arResult['DISPLAY_PROPERTIES']['ADITION_MATERIALS']["FILE_VALUE"]['ORIGINAL_NAME']?>" alt="Image" class="img-fluid"></a>
+								</div>
+								<?
+							}
 						}
 						?>	
 					</div>
 					<div class="row mt-5">
+						<? if ($arResult['DISPLAY_PROPERTIES']["LINKS"] != NULL) { ?>
 						<div class="col-12">
 							<h2 class="h4 text-black mb-3"><?=GetMessage("LINKS")?></h2>
 						</div>
+						<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
 						<?foreach($arResult['DISPLAY_PROPERTIES']["LINKS"]['DISPLAY_VALUE'] as $links):?>
-							<!-- <div class="col-sm-6 col-md-4 col-lg-3 mb-4"> -->
 							<a><?=$links?></a>
-						<!-- </div> -->
-						<?endforeach;?>		
+							<?endforeach;?>		
+						</div>
+						<?}?>
 					</div>
 				</div>
 			</div>
