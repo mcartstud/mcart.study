@@ -27,6 +27,16 @@ $arTemplateParameters = array(
 		"TYPE" => "CHECKBOX",
 		"DEFAULT" =>"N",
 		"REFRESH"=> "Y",
+	),	
+	"TITLE_TEXT" => Array(
+		"NAME" => "Заголовок объявлений",
+		"TYPE" => "LIST",
+		"VALUES" => array (
+			1 => "Новые предложения для вас",
+			2 => "Ваши объявления",
+		),
+		"DEFAULT" => '1',
+		"SORT" => "20",
 	),
 );
 

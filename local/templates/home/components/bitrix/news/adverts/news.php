@@ -38,28 +38,30 @@ if($arParams["USE_SEARCH"]=="Y"):?>
 <br />
 <?php
 endif;
-if($arParams["USE_FILTER"]=="Y"):
-$APPLICATION->IncludeComponent(
-	"bitrix:catalog.filter",
-	"",
-	[
-		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-		"FILTER_NAME" => $arParams["FILTER_NAME"],
-		"FIELD_CODE" => $arParams["FILTER_FIELD_CODE"],
-		"PROPERTY_CODE" => $arParams["FILTER_PROPERTY_CODE"],
-		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-		"CACHE_TIME" => $arParams["CACHE_TIME"],
-		"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-		"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
-	],
-	$component,
-	['HIDE_ICONS' => 'Y']
-);
+// if (isset($GLOBALS['arrFilterAdverts'])) $_SESSION['arrFilterAdverts'] = $GLOBALS['arrFilterAdverts'];
+// if($arParams["USE_FILTER"]=="Y"):
+// $APPLICATION->IncludeComponent(
+// 	"bitrix:catalog.filter",
+// 	"",
+// 	[
+// 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+// 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+// 		"FILTER_NAME" => $arParams["FILTER_NAME"],
+// 		"FIELD_CODE" => $arParams["FILTER_FIELD_CODE"],
+// 		"PROPERTY_CODE" => $arParams["FILTER_PROPERTY_CODE"],
+// 		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
+// 		"CACHE_TIME" => $arParams["CACHE_TIME"],
+// 		"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
+// 		"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
+// 	],
+// 	$component,
+// 	['HIDE_ICONS' => 'Y']
+// );
 ?>
-<br />
+<!-- <br /> -->
 <?php
-endif;
+// endif;
+// if (isset($_SESSION['arrFilterAdverts'])) $GLOBALS['arrFilterAdverts'] = $_SESSION['arrFilterAdverts'];
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
@@ -109,6 +111,7 @@ $APPLICATION->IncludeComponent(
 		"FILTER_NAME" => $arParams["FILTER_NAME"],
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
+		"TITLE_TEXT" => $arParams["TITLE_TEXT"],
 	],
 	$component
 );

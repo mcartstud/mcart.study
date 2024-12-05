@@ -160,9 +160,9 @@ $this->setFrameMode(true);
 							<h2 class="h4 text-black mb-3"><?=GetMessage("LINKS")?></h2>
 						</div>
 						<div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-						<?foreach($arResult['DISPLAY_PROPERTIES']["LINKS"]['DISPLAY_VALUE'] as $links):?>
-							<a><?=$links?></a>
-							<?endforeach;?>		
+						<?foreach($arResult['DISPLAY_PROPERTIES']["LINKS"]['DISPLAY_VALUE'] as $links):
+							echo $links;?></br><?
+							endforeach;	?>
 						</div>
 						<?}?>
 					</div>

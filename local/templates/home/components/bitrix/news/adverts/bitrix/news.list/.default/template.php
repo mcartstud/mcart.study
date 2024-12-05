@@ -110,7 +110,17 @@ $this->setFrameMode(true);
 		<div class="row mb-5">
 			<div class="col-12">
 				<div class="site-section-title">
-					<h2><?=GetMessage('NEW_PROP')?></h2>
+					<h2><?
+					switch ($arParams['TITLE_TEXT']) {
+						case '1':
+							echo GetMessage('NEW_PROP');
+							break;
+						
+						case "2":
+							echo GetMessage('Y_PROP');
+							break;
+					}					
+					?></h2>
 				</div>
 			</div>
 		</div>
