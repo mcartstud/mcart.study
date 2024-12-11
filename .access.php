@@ -1,4 +1,7 @@
 <?
+$PERM["desktop_app"]["*"]="D";
+$PERM["video"]["*"]="R";
+$PERM["online"]["*"]="R";
 $PERM[".top.menu.php"]["9"]="W";
 $PERM[".bottom.menu.php"]["9"]="W";
 $PERM["adverts"]["7"]="W";
