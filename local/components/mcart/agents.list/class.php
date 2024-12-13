@@ -291,7 +291,7 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
             
         $rsAgents = $entity::GetList([
             "filter" => array(
-                "UF_ACTIVITY" => '1'
+                "=UF_ACTIVITY" => '1'
             ),
             "count_total" => true,
             "offset" => $nav->getOffset(),
@@ -302,15 +302,11 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
             * https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=2741
             */
         ]);
-        
         while ($arAgent = $rsAgents->fetch()) {
             $arAgent['UF_TYPE'] = $arTypeAgents[$arAgent['UF_TYPE']];
             
             if (($arAgent['UF_PHOTO']) != '0') {
                 $arAgent['UF_PHOTO'] = CFile::GetPath($arAgent['UF_PHOTO']);
-            }
-            else {
-                $arAgent['UF_PHOTO'] = "";
             }
 
             /**

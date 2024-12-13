@@ -17,6 +17,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 $this->setFrameMode(true);
 $APPLICATION->AddChainItem("Агенты");
 
+
 ?>
 
 <div class="site-section site-section-sm bg-light">
@@ -33,15 +34,15 @@ $APPLICATION->AddChainItem("Агенты");
 <?
 
 foreach($arResult['AGENTS']["ITEMS"] as $key => $agent) {
-?>
-
+	?>
 <div class="agent__card">
 	<div class="small-info">
-		<div class="avatar" style="background-image: url(<? if (($agent['UF_PHOTO'])!="") {
-                echo $agent['UF_PHOTO'];
+		<div class="avatar" style="background-image: url(<? 
+			if (($agent['UF_PHOTO'])!="0") {
+				echo $agent['UF_PHOTO'];
             }
             else {
-                echo "/local/components/mcart/agents.list/templates/.default/images/no-avatar.png";
+                echo $templateFolder."/images/no-avatar.png";
             }?>);"></div>
 		<div class="info">
 			<div class="name"><?=$agent['UF_NAME']?></div>
@@ -63,16 +64,18 @@ foreach($arResult['AGENTS']["ITEMS"] as $key => $agent) {
 			</div>
 		</div>
 	</div>
-	<a class="star <?if (in_array($key, $arResult['favagents'])) echo "active";?>" data-agentid="<?=$key?>">
+	<a class="star <?
+		$opt = CUserOptions::GetOption("favagents", "Agents_ID");
+		if (is_array($opt)) {
+			if ((in_array($key, $arResult['favagents'])) || ($key == $opt)) {
+				echo "active";
+			}
+		}
+		?>" data-agentid="<?=$key?>">
 		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M12 4L14.472 9.26604L20 10.1157L16 14.2124L16.944 20L12 17.266L7.056 20L8 14.2124L4 10.1157L9.528 9.26604L12 4Z" stroke="#95929A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 		</svg>
 	</a>
-	<!-- <a class="star active">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M12 4L14.472 9.26604L20 10.1157L16 14.2124L16.944 20L12 17.266L7.056 20L8 14.2124L4 10.1157L9.528 9.26604L12 4Z" stroke="#95929A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-		</svg>
-	</a> -->
 </div>
 
 
