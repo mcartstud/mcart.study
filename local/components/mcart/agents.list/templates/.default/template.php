@@ -19,7 +19,6 @@ $APPLICATION->AddChainItem("Агенты");
 
 
 ?>
-
 <div class="site-section site-section-sm bg-light">
 	<div class="container agents-list">
 		<div class="row mb-5">
@@ -65,9 +64,8 @@ foreach($arResult['AGENTS']["ITEMS"] as $key => $agent) {
 		</div>
 	</div>
 	<a class="star <?
-		$opt = CUserOptions::GetOption("favagents", "Agents_ID");
-		if (is_array($opt)) {
-			if ((in_array($key, $arResult['favagents'])) || ($key == $opt)) {
+		if (is_array($arResult['favagents'])) {
+			if (in_array($key, $arResult['favagents'])) {
 				echo "active";
 			}
 		}
