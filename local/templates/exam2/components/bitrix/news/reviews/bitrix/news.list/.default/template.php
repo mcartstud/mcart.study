@@ -24,21 +24,20 @@ $this->setFrameMode(true);
 		<div class="review-text">
 		
 			<div class="review-block-title"><span class="review-block-name"><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a></span><span class="review-block-description"><?=$arItem["DISPLAY_ACTIVE_FROM"]?>, <?=$arItem["DISPLAY_PROPERTIES"]['POSITION']['DISPLAY_VALUE']?>, <?=$arItem["DISPLAY_PROPERTIES"]['COMPANY']['DISPLAY_VALUE']?></span></div>
-			
-			<div class="review-text-cont">
 				<?=$arItem["PREVIEW_TEXT"]?>
+			<div class="review-text-cont">
+				
 			</div>
 		</div>
 		<div class="review-img-wrap"><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img src="<?
-			if (is_array($arItem["DETAIL_PICTURE"])) {
-				echo $arItem["DETAIL_PICTURE"]["SRC"];
-			}
-			else {
-				echo SITE_TEMPLATE_PATH."/img/rew/no_photo.jpg";
-			}
+		if (is_array($arItem["PREVIEW_PICTURE"])) {
+			echo $arItem["PREVIEW_PICTURE"]["SRC"];
+		}
+		else {
+			echo SITE_TEMPLATE_PATH."/img/rew/no_photo.jpg";
+		}
 		?>" alt="img"></a></div>
 	</div>
-
 <?endforeach;?>
 <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
 	<br /><?=$arResult["NAV_STRING"]?>
