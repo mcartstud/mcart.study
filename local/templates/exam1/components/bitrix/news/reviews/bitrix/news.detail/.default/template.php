@@ -40,13 +40,13 @@ if (!empty($arResult["DISPLAY_PROPERTIES"]['DOCS'])) {
 	if (count($arResult["DISPLAY_PROPERTIES"]['DOCS']["VALUE"]) > 1) {
 		foreach ($arResult["DISPLAY_PROPERTIES"]['DOCS']["FILE_VALUE"] as $doc) {
 			?>
-		<div  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png"><a href="<?=$doc["SRC"]?>"><?=$doc["ORIGINAL_NAME"]?></a></div>
+		<div  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png"><a download href="<?=$doc["SRC"]?>"><?=$doc["ORIGINAL_NAME"]?></a></div>
 		<?
 		}
 	}
 	elseif (count($arResult["DISPLAY_PROPERTIES"]['DOCS']["VALUE"]) == 1) {
 		?>
-		<div  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png"><a href="<?=$arResult["DISPLAY_PROPERTIES"]['DOCS']["FILE_VALUE"]['SRC']?>"><?=$arResult["DISPLAY_PROPERTIES"]['DOCS']["FILE_VALUE"]['ORIGINAL_NAME']?></a></div>
+		<div  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png"><a download href="<?=$arResult["DISPLAY_PROPERTIES"]['DOCS']["FILE_VALUE"]['SRC']?>"><?=$arResult["DISPLAY_PROPERTIES"]['DOCS']["FILE_VALUE"]['ORIGINAL_NAME']?></a></div>
 		<?
 	}
 }

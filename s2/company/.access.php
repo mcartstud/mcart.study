@@ -1,3 +1,4 @@
 <?
-$PERM["mission.php"]["*"]="D";
+$PERM["mission.php"]["2"]="D";
+$PERM["mission.php"]["*"]="R";
 ?>
