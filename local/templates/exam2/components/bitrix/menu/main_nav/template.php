@@ -7,7 +7,7 @@
 	<a href="" class="btn-menu btn-toggle"></a>
 		<div class="menu popup-block">
 			<ul class="">
-			<li class="main-page"><a href="<?=SITE_DIR?>">Главная</a>
+			<li class="main-page"><a href="<?=SITE_DIR?>"><?=GetMessage("MAIN_PAGE")?></a>
 				</li>
 <?
 $previousLevel = 0;
